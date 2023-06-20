@@ -1,0 +1,53 @@
+
+<body>
+    <head>
+        <style>
+            .message{font-size  :0.8rem;color:red ;display:none};
+        </style>
+    </head>
+    <h2>Airlines Infant Policy</h2>
+    <label for="AGE">Age</label><br>
+    <input type="text" id ="age" >
+    <div id= "mes" class="message">Age should be number</div>
+   <!-- // <input type ="button" id="findcategory" value="Find Category"> -->
+    <h3 id="category"></h3>
+    <script>
+
+        let age = document.getElementById('age');
+        // let category = document.getElementById('findcategory');
+        let c = document.getElementById('category');
+        let message= document.getElementById("mes");
+
+        console.log(message);
+       age.addEventListener("keyup",function(){
+
+        message.style.display="none";
+        c.innerText=" ";
+            if(age.value==0) {
+                c.innerText=" ";
+            }
+            else if(isNaN(age.value))
+                {
+            message.style.display="block";
+                }
+                else   if(age.value<2)
+                { 
+                    c.innerText="Infant";
+                } 
+            else if(age.value>=2 && age.value<=11) 
+            {
+                c.innerText="Children";
+            }         
+            else if(age.value>=12) {
+                c.innerText="Adult";
+
+                }
+        });
+
+
+//category.onclick=find;
+
+    </script>
+
+
+</body>
